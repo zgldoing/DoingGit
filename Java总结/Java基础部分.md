@@ -16,8 +16,8 @@ Java通过不同的系统、不同版本、不同位数的Java虚拟机（JVM）
 | byte     | 1字节（8bit）    | -128~127         | 0      |
 | short    | 2字节（16bit）   | -32768~32767     | 0      |
 | int      | 4字节（32bit）   | -2(31) ~ 2(31)-1 | 0      |
-| long     | 8字节（64bit）   | -2(31) ~ 2(31)-1 | 0      |
-| float    | 4字节（32bit）   | -2(63) ~ 2(63)-1 | 0.0f   |
+| long     | 8字节（64bit）   | -2(63) ~ 2(63)-1 | 0      |
+| float    | 4字节（32bit）   | -2(31) ~ 2(31)-1 | 0.0f   |
 | double   | 8字节（64bit）   | -2(63) ~ 2(63)-1 | 0.0d   |
 | char     | 2字节（16bit）   | \u0000~\uffff    | \u0000 |
 | boolean  | 1字节(1bit)      | true/false       | false  |
@@ -79,6 +79,16 @@ i==j;//对象相等，是因为存在缓存值对象，所以i、j指向同一�
   - HashMap是线程不安全的，效率比较高。hashTable是现场安全的，但是效率低。
 - ConcurrentHashMap
   > 通过把整个Map分为N个Segment（类似HashTable）,可以提供相同的线程安全，但是效率提升N倍，默认提升16倍。
+  - jdk1.7中采用 Segment + HashEntry的方式进行实现，结构如下：
+![ConcurrentHashMap_结构实现_jdk1.7](image/ConcurrentHashMap_结构实现_jdk1.7.webp)
+Segment数组的意义就是将一个大的table分割成多个小的table来进行加锁，而每一个Segment元素存储的是HashEntry数组+链表，这个和HashMap的数据存储结构一样
+  - 而jdk1.8中则
+去除 Segment + HashEntry + Unsafe 的实现，
+改为 Synchronized + CAS + Node + Unsafe 的实现
+其结构图如下：
+![ConcurrentHashMap_结构实现_jdk1.8](image/ConcurrentHashMap_结构实现_jdk1.8.webp)
+如上图所示，取消了Segment字段，数组中存储的就是Node。它与HashMap中的HashEntry定义很相似，但是有一些差别。它对value和next属性设置了volatile同步锁，它不允许调用setValue方法直接改变Node的value域。
+另外，将原先table数组＋单向链表的数据结构，变更为table数组＋单向链表＋红黑树的结构，在hash碰撞过多的情况下会将链表转化成红黑树。
 
 ### 11. 实现一个拷贝文件的工具类，使用字节流还是字符流
 拷贝的文件不确定是只包含字符流，有可能包含字节流（图片、声音、影像等),为考虑通用性，要使用字节流。
