@@ -36,12 +36,23 @@ Initialized empty Git repository in /c/Users/zgldo/doinggit/.git/
 
 ### 4. 检查状态 – git status
 
-`Git status`是另一个非常重要的命令，它反馈给我们仓库当前状态的信息：是否为最新代码，有什么更新等等。在我们新建的仓库中执行`git status`会得到以下内容:
+#### 4.1 git status说明
 
-![Git_status命令结果](D:\ZGLDoingGitRepository\DoingGit\应用使用总结\image\Git_status命令结果.png)
+ `Git status`是另一个非常重要的命令，它反馈给我们仓库当前状态的信息：是否为最新代码，有什么更新等等。在我们新建的仓库中执行`git status`会得到以下内容:
+
+![Git_status命令结果](./image/Git_status命令结果.png)
 
 反馈信息告诉我们，(例如：README.md)尚未跟踪，这是说这个文件是新的，git不知道是应该跟踪它的变动还是直接忽略。为了跟踪我们的新文件，我们需要暂存它。
 
+#### 4.2 中文显示问题
+
+在默认设置下，中文文件名在工作区状态输出，中文名不能正确显示，而是显示为八进制的字符编码。如上图。
+通过将git配置变量 core.quotepath 设置为false，就可以解决中文文件名称在这些Git命令输出中的显示问题：
+
+```bash
+$ git config --global core.quotepath false
+```
+![Git_status_中文显示](image/Git_status_中文显示.png)
 ### 5. 暂存 – git add
 
 Git有个概念叫*“暂存区“*，你可以把它看成一块空白的画布，包裹着所有你可能会提交的变动。它一开始是空的，可以通过 git add命令添加内容，最后使用 *git commit* 提交（创建一个快照）。
@@ -58,7 +69,7 @@ $ git add .  # 提交新文件(new)和被修改(modified)文件，不包括被�
 ```
 再次使用git status查看状态试试：
 
-![Git_add_之后的status](D:\ZGLDoingGitRepository\DoingGit\应用使用总结\image\Git_add_之后的status.png)
+![Git_add_之后的status](./image/Git_add_之后的status.png)
 
 我们的文件已经准备好可以提交了。状态信息还告诉我们暂存区文件发生了什么变动，这里我们新增了一个文件，同样可以做修改和删除。取决于我们在上一次*git add*之后发生了什么。
 
@@ -78,7 +89,7 @@ $ git commit -m "修改注释."
 $ git diff 文件名+类型
 ```
 
-![查看修改内容](D:\ZGLDoingGitRepository\DoingGit\应用使用总结\image\Git_diff.png)
+![查看修改内容](./image/Git_diff.png)
 
 ### 8. 查看文件内容
 
@@ -86,7 +97,7 @@ $ git diff 文件名+类型
 $ cat 文件名
 ```
 
-![查看文件内容](D:\ZGLDoingGitRepository\DoingGit\应用使用总结\image\cat_查看文件内容.png)
+![查看文件内容](./image/cat_查看文件内容.png)
 
 ## 二、远程仓库
 
