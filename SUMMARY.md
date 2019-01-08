@@ -7,6 +7,7 @@
 * [应用使用总结](应用使用总结/README.md)
   * [Git安装与使用](应用使用总结\git使安装与使用.md)
   * [GitHub与Gitee配置](应用使用总结\GitHub与Gitee.md)
-  * [GitBook安装与使用](应用使用总结\GitBook安装与使用.md)
   * [Git设置忽略文件和目录](应用使用总结\git设置忽略文件和目录.md)
+  * [GitBook安装与使用](应用使用总结\GitBook安装与使用.md)
+  * [IDEA安装及使用](应用使用总结\IDEA安装及使用.md)
 
