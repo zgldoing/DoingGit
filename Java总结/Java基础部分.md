@@ -103,7 +103,8 @@ Segment数组的意义就是将一个大的table分割成多个小的table来进
     Thread thread = new Tread(继承Tread的对象或者实现Runnable的对象);
     tread.start();//启动线程使用的start方法，启动以后执行的是run方法。
 ```
-
+- 当你调用 start() 方法时，它会新建一个线程然后执行 run() 方法中的代码。
+- 如果直接调用 run() 方法，并不会创建新线程，方法中的代码会在当前调用者的线程中执行。
 3. 区分线程
 ```java
     thread.setName("设置一个线程的名称");//在创建线程完成后，都需要设置线程名称。
