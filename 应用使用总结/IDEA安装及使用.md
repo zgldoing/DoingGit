@@ -11,7 +11,7 @@
 ### 2. 破解
 将下载的文件放到安装IDEA路径的bin目录下：
 
-![idea破解安装路径](image\idea破解安装路径.png)
+![idea破解安装路径](image/idea破解安装路径.png)
 
 找到*idea.exe.vmoptions*和*idea64.exe.vmoptions*，用notepad++打开它们，在两个文件最后分别加上：
 
@@ -90,11 +90,11 @@ ThisCrackLicenseId-{
 
 ```
 
-![idea激活配置ActivationCode](image\idea激活配置ActivationCode.png)
+![idea激活配置ActivationCode](image/idea激活配置ActivationCode.png)
 
 从Get Help | About查看激活信息,说明激活成功：
 
-![ideaAboutInfo](image\ideaAboutInfo.png)
+![ideaAboutInfo](image/ideaAboutInfo.png)
 
 ### 4. 文件编码设置
 
@@ -120,7 +120,7 @@ Default encoding for properties files:UTF-8
 
 如下图所示：
 
-![idea破解及编码设置](image\idea破解及编码设置.png)
+![idea破解及编码设置](image/idea破解及编码设置.png)
 
 ## 二、配置
 
@@ -128,7 +128,7 @@ Default encoding for properties files:UTF-8
 
 在File | Settings | Editor | Inspections| Java |中配置：
 
-![idea设置serialVersionUID](image\idea设置serialVersionUID.png)
+![idea设置serialVersionUID](image/idea设置serialVersionUID.png)
 
 在你的class中：Alt+Enter就会提示自动创建serialVersionUID了。
 
@@ -150,13 +150,13 @@ Default encoding for properties files:UTF-8
 
 如图：
 
-![idea生成类注释](image\idea生成类注释.png)
+![idea生成类注释](image/idea生成类注释.png)
 
 ### 3. 生成类注释
 
 - 在File | Settings | Editor | Live Templates  点击右边加号为自己添加一个Templates Group 
 
-![idea添加方法注释1](image\idea添加方法注释1.png)
+![idea添加方法注释1](image/idea添加方法注释1.png)
 
 - | 然后选中自己的Group再次点击加号添加Live Templates 
 
@@ -174,7 +174,7 @@ Default encoding for properties files:UTF-8
 
 效果图：
 
-![idea添加方法注释2](image\idea添加方法注释2.png)
+![idea添加方法注释2](image/idea添加方法注释2.png)
 
 - 设置注释的关联变量：先设置好Template text内容后—>Edit variables，变量如效果图设置就好。效果图：
 

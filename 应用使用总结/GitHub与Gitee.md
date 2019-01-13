@@ -46,7 +46,7 @@ $ cat ~/.ssh/id_rsa.pub
 
 把生成的SSH公钥在右上角用户头像 -> 菜单“修改资料”，然后选择“SSH公钥”添加到Gitee（gitee.com [SSHKey添加地址](http://git.oschina.net/profile/sshkeys)）或GitHub（github.com [SSHKey添加地址](https://github.com/settings/ssh/new)）
 
-![gitee配置ssh公钥](image\gitee配置ssh公钥.png)
+![gitee配置ssh公钥](image/gitee配置ssh公钥.png)
 
 添加后，在git bash终端中输入
 
