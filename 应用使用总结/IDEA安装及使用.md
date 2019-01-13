@@ -187,3 +187,7 @@ Default encoding for properties files:UTF-8
 ---
 
 参考：<https://github.com/judasn/IntelliJ-IDEA-Tutorial>
+
+https://youmeek.gitbooks.io/intellij-idea-tutorial/content/theme-settings.html
+
+https://qbgbook.gitbooks.io/spring-boot-reference-guide-zh/content/
